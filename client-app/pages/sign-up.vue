@@ -637,6 +637,7 @@ const { value: regionName } = useField("regionName", toTypedSchema(yupString().m
 const { value: regionId } = useField("regionId", regionRules, { syncVModel: false });
 
 const commonErrors = ref<string[]>([]);
+const jack = ref("");
 const emailValidationData = reactive({
   isChecked: false,
   isUnique: false,
@@ -727,5 +728,7 @@ onMounted(async () => {
     await loadCountries();
   }
   console.log("countries", countries);
+  jack.value = window.currentStoreNameWithLang;
+  console.log("jack", jack);
 });
 </script>

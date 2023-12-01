@@ -60,6 +60,35 @@
     {%- comment %}"localization": {{ '' | t }}{% endcomment -%}
   }
 </script>
+<script>
+  
+var currentStoreNameWithLang = '{{ current_store | json }}'
+// window.currentStoreNameWithLang = "jack"
+// Assuming '{{ current_store | json }}' is a string representation of a JSON object
+const jsonString = '{{ current_store | json }}';
+
+// Parse the JSON string into a JavaScript object
+const currentStore = JSON.parse(jsonString);
+
+// Find the dynamic property with the name 'display_name'
+const displayNameProperty = currentStore.dynamicProperties.find(property => property.name === 'display_name');
+
+if (displayNameProperty && displayNameProperty.values && displayNameProperty.values.length > 0) {
+  // Find the value with language 'ar-EG'
+  const arabicDisplayName = displayNameProperty.values.find(value => value.language.cultureName === 'ar-EG');
+
+  if (arabicDisplayName) {
+    const result = arabicDisplayName.value;
+    // window.currentStoreNameWithLang = result
+    // console.log(' window.currentStoreNameWithLang',  window.currentStoreNameWithLang); // Output: "سوق التبادل الإلكتروني"
+  } else {
+    console.log('Arabic display name not found.');
+  }
+} else {
+  console.log('Display name property not found in dynamicProperties.');
+}
+
+</script>
 
 {{ 'main.js' | asset_url | append_version | script_tag_module }}
 

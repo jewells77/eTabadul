@@ -19,6 +19,10 @@ function getCategoryQueryDocument(categoryId: string, maxChildCategoriesLevel = 
         id
         name
         slug
+        properties{
+          name
+          value
+        }
         seoInfo {
             pageTitle
             metaKeywords

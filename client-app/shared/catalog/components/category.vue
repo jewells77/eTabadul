@@ -103,7 +103,7 @@
               </span>
 
               <span v-else>
-                {{ currentCategory?.name }}
+                {{ displayName ? displayName : currentCategory?.name }}
               </span>
 
               <sup
@@ -673,6 +673,11 @@ function setFiltersPosition() {
 }
 
 const setFiltersPositionOptimized = throttle(setFiltersPosition, 100);
+
+const displayName = computed(() => {
+  const displayProperty = currentCategory.value?.properties.find((property) => property.name === "display_name");
+  return displayProperty ? displayProperty.value : null;
+});
 
 onMounted(() => {
   window.addEventListener("scroll", setFiltersPositionOptimized);

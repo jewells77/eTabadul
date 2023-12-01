@@ -14,6 +14,10 @@ declare global {
     swipeHandler?: boolean;
   }
 
+  interface Window {
+    currentStoreNameWithLang: string;
+  }
+
   interface SlidingActionsItem {
     icon: string;
     title: string;

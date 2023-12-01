@@ -79,6 +79,7 @@ async function setLocale(i18n: I18n, locale: string): Promise<void> {
    */
 
   document.documentElement.setAttribute("lang", locale);
+  document.documentElement.setAttribute("dir", locale == "ar" ? "rtl" : "auto");
 }
 
 function saveLocaleAndReload(locale: string) {
