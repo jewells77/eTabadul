@@ -1,0 +1,18 @@
+query dynamicProperties($cultureName: String, $objectType: String) {
+  dynamicProperties(cultureName: $cultureName, objectType: $objectType) {
+    totalCount
+    items {
+      objectType
+      isDictionary
+      name
+      id
+      label
+      dictionaryItems {
+        items {
+          name
+          label
+        }
+      }
+    }
+  }
+}

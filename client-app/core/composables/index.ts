@@ -3,6 +3,7 @@ export * from "./useBreadcrumbs";
 export * from "./useCategoriesRoutes";
 export * from "./useCountries";
 export * from "./useCurrency";
+export * from "./useDynamicProperty";
 export * from "./useErrorsTranslator";
 export * from "./useFetch";
 export * from "./useGoogleAnalytics";

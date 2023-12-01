@@ -104,13 +104,13 @@
             class="my-px line-clamp-2 h-12 cursor-pointer text-18 font-extrabold text-[color:var(--color-link)] lg:h-10 lg:text-14"
             @click="$emit('linkClick', $event)"
           >
-            {{ product.name }}
+            {{ displayName ? displayName : product.name }}
           </router-link>
         </template>
 
         <template #content>
           <div class="rounded-sm bg-white px-3.5 py-1.5 text-xs text-tooltip shadow-sm-x-y">
-            {{ product.name }}
+            {{ displayName ? displayName : product.name }}
           </div>
         </template>
       </VcTooltip>
@@ -245,6 +245,11 @@ const properties = computed(() =>
   Object.values(getPropertiesGroupedByName(props.product.properties ?? [], PropertyType.Product)).slice(0, 3),
 );
 const price = computed(() => (props.product.hasVariations ? props.product.minVariationPrice : props.product.price));
+
+const displayName = computed(() => {
+  const displayProperty = props.product?.properties.find((property) => property.name === "display_name");
+  return displayProperty ? displayProperty.value : null;
+});
 
 function slideChanged(swiper: SwiperInstance) {
   const activeIndex: number = swiper.activeIndex;

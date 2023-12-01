@@ -11,6 +11,14 @@ export type RegisterOrganization = {
   lastName?: string;
   middleName?: string;
   organizationName?: string;
+  companyCountry?: string;
+  commercialRegistrationNumber?: string;
+  companyType?: string;
+  businessCategory?: string;
+  salesRepresentative?: string;
+  financialRepresentative?: string;
+  companyClassification?: string;
+  legalEntity?: string;
 };
 
 export type SignMeUp = {
@@ -19,6 +27,9 @@ export type SignMeUp = {
   password: string;
   firstName: string;
   lastName: string;
+  nationalId: string;
+  phoneNumber: string;
+  fax: string;
 };
 
 export type SignMeIn = {

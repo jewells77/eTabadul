@@ -35,7 +35,7 @@
       "checkout_coupon_enabled": true,
       "checkout_gifts_enabled": true,
 
-      "logo_image": "/static/images/common/logo.svg",
+      "logo_image": "/static/images/common/companyLogo.svg",
       "logo_inverted_image": "/static/images/common/logo-white.svg",
       "favicon_image": "/static/icons/favicon-16x16.png",
       "homepage_background_image": "/static/images/home/main-banner.webp",

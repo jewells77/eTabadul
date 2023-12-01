@@ -1,5 +1,5 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   root: true,
@@ -29,21 +29,13 @@ module.exports = {
     sourceType: "module",
     tsconfigRootDir: __dirname,
   },
-  plugins: [
-    "vue",
-    "import",
-    "sort-exports",
-    "sort-export-all",
-    "@typescript-eslint",
-    "sonarjs",
-    "vuejs-accessibility",
-  ],
+  plugins: ["vue", "import", "sort-exports", "sort-export-all", "@typescript-eslint", "sonarjs", "vuejs-accessibility"],
   rules: {
     /**
      * Errors
      */
     "@typescript-eslint/no-shadow": "error",
-    "curly": "error",
+    curly: "error",
     "import/no-unresolved": "error",
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "warn",
     "vue/block-lang": ["error", { script: { lang: "ts" } }],
@@ -53,6 +45,7 @@ module.exports = {
     "vue/no-duplicate-attr-inheritance": "error",
     "vue/no-irregular-whitespace": "error",
     "vue/valid-define-options": "error",
+    "@typescript-eslint/no-explicit-any": 0,
     "vuejs-accessibility/anchor-has-content": [
       "error",
       {
@@ -81,10 +74,10 @@ module.exports = {
     "@typescript-eslint/no-misused-promises": [
       "warn",
       {
-        "checksVoidReturn": {
-          "arguments": false,
-        }
-      }
+        checksVoidReturn: {
+          arguments: false,
+        },
+      },
     ], // TODO: Switch to error
     "@typescript-eslint/no-unsafe-argument": "warn", // TODO: Switch to error
     "@typescript-eslint/no-unsafe-assignment": "warn", // TODO: Switch to error
@@ -182,39 +175,36 @@ module.exports = {
         "no-restricted-exports": [
           "warn",
           {
-            "restrictDefaultExports": {
+            restrictDefaultExports: {
               direct: true,
               named: true,
               defaultFrom: true,
               namedFrom: true,
               namespaceFrom: true,
-            }
-          }
+            },
+          },
         ],
-      }
+      },
     },
     {
       files: ["**/components/**/index.ts"],
       rules: {
-        "padding-line-between-statements": [
-          "warn",
-          { "blankLine": "never", "prev": "export", "next": "export" }
-        ],
+        "padding-line-between-statements": ["warn", { blankLine: "never", prev: "export", next: "export" }],
         "sort-exports/sort-exports": "warn",
-      }
+      },
     },
     {
       files: ["client-app/ui-kit/*"],
       rules: {
         "no-console": ["warn", { allow: ["warn", "error"] }],
-      }
+      },
     },
     {
       files: ["scripts/*"],
       rules: {
         "no-console": "off",
-      }
-    }
+      },
+    },
   ],
   globals: {
     /**
@@ -234,5 +224,5 @@ module.exports = {
       },
       node: true,
     },
-  }
+  },
 };

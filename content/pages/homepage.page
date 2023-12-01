@@ -11,12 +11,12 @@
       "id": "slider2e19",
       "slides": [
         {
-          "image": "/static/images/home/slide-1.webp",
+          "image": "/static/images/home/img1.webp",
           "text": "",
           "title": ""
         },
         {
-          "image": "/static/images/home/slide-2.webp",
+          "image": "/static/images/home/img2.webp",
           "text": "",
           "title": ""
         }

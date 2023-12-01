@@ -3,6 +3,7 @@ export * from "./cart";
 export * from "./catalog";
 export * from "./client";
 export * from "./common";
+export * from "./dynamicProperty";
 export * from "./fulfillmentCenters";
 export * from "./orders";
 export * from "./organization";

@@ -9,7 +9,7 @@
       <!-- Breadcrumbs -->
       <VcBreadcrumbs class="mb-3 hidden print:block lg:block" :items="breadcrumbs" />
 
-      <h1 class="text-2xl font-bold uppercase md:text-4xl">{{ product.name }}</h1>
+      <h1 class="text-2xl font-bold uppercase md:text-4xl">{{ displayName ? displayName : product.name }}</h1>
 
       <VcCopyText
         v-if="!product.hasVariations"
@@ -76,6 +76,11 @@ const seoTitle = computed(() => product.value?.seoInfo?.pageTitle || product.val
 const seoDescription = computed(() => product.value?.seoInfo?.metaDescription);
 const seoKeywords = computed(() => product.value?.seoInfo?.metaKeywords);
 const seoImageUrl = computed(() => product.value?.imgSrc);
+
+const displayName = computed(() => {
+  const displayProperty = product.value?.properties.find((property) => property.name === "display_name");
+  return displayProperty ? displayProperty.value : null;
+});
 
 usePageHead({
   title: seoTitle,

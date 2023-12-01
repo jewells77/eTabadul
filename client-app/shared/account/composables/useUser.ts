@@ -223,6 +223,19 @@ export function useUser() {
         contact: {
           firstName: payload.firstName,
           lastName: payload.lastName,
+          phoneNumber: payload.phoneNumber,
+          dynamicProperties: [
+            {
+              name: "nation_id",
+              value: payload.nationalId,
+              locale: "National Id",
+            },
+            {
+              name: "fax",
+              value: payload.fax,
+              locale: "fax",
+            },
+          ],
         },
       });
 
@@ -254,6 +267,48 @@ export function useUser() {
         },
         organization: {
           name: payload.organizationName as string,
+          dynamicProperties: [
+            {
+              name: "company_country",
+              value: payload.companyCountry,
+              locale: "Company Country",
+            },
+            {
+              name: "commercial_registration_number",
+              value: payload.commercialRegistrationNumber,
+              locale: "Commercial Registration Number",
+            },
+            {
+              name: "company_type",
+              value: payload.companyType,
+              locale: "Company Type",
+            },
+            {
+              name: "business_category",
+              value: payload.businessCategory,
+              locale: "Business Category",
+            },
+            {
+              name: "sales_representative",
+              value: payload.salesRepresentative,
+              locale: "Sales Representative",
+            },
+            {
+              name: "financial_representative",
+              value: payload.financialRepresentative,
+              locale: "Financial Representative",
+            },
+            {
+              name: "legal_entity",
+              value: payload.legalEntity,
+              locale: "Legal Entity",
+            },
+            {
+              name: "company_classification",
+              value: payload.companyClassification,
+              locale: "Legal Entity",
+            },
+          ],
         },
       });
 
